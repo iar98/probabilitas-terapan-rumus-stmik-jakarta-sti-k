@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh soal</title>
+    <link rel="stylesheet" href="css/view.css">
+</head>
+<body>
+    <div class="container">
+        <div class="close"><a href="peluangBinominal.html">X</a></div>
+        <h2>Contoh soal!</h2>
+        <h4>Soal</h4>
+        <p>Sebuah bola dimasukkan ke dalam sebuah kotak yang berisi 12 bola warna putih dan 8 bola <br> 
+            warna merah. Anda akan melakukan pengambilan bola secara acak dan mengembalikannya <br>
+            ke dalam kotak sebanyak 5 kali. Tentukan peluang Anda akan mengambil bola warna merah <br>
+            2 kali dari 5 pengambilan bola.</p>
+        <h4>Jawaban</h4>
+        <textarea name="text" id="text">
+Untuk menyelesaikan masalah ini, kita dapat menggunakan distribusi peluang binomial. Peluang sukses (mengambil bola merah) dalam satu percobaan adalah 8/20 = 0,4, dan peluang gagal (mengambil bola putih) adalah 12/20 = 0,6.
+
+Jadi, kita dapat menggunakan rumus peluang binomial:
+
+P(X = k) = (n choose k) * p^k * (1 - p)^(n - k)
+
+di mana:
+
+n adalah jumlah pengambilan bola (di sini, n = 5)
+k adalah jumlah kali sukses yang diinginkan (di sini, k = 2)
+p adalah peluang sukses dalam satu percobaan (di sini, p = 0,4)
+(n choose k) adalah kombinasi dari n objek yang diambil k sekaligus.
+Maka kita dapat menghitung peluang sebagai berikut:
+
+P(X = 2) = (5 choose 2) * 0,4^2 * 0,6^3
+= (5! / (2! * 3!)) * 0,16 * 0,216
+= 10 * 0,16 * 0,216
+= 0,3456
+
+Jadi, peluang Anda akan mengambil bola merah 2 kali dari 5 pengambilan bola adalah sekitar 0,3456 atau sekitar 34,56%.
+        </textarea>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probabilitas nilai harapan</title>
+    <link rel="stylesheet" href="css/view.css">
+</head>
+<body>
+    <div class="container">
+        <div class="close"><a href="index.html">X</a></div>
+        <h2>Probabilitas nilai harapan adalah nilai rata rata yang di harapkan dari suatu acak variabel setelah di lakukan serangkaian pengamatan atau eksperimen.</h2>
+        <h2>Rumus = E(X) =𝜇 = Σ x * f(x)</h2>
+        <ul>
+            <li>
+                <button onclick="window.location.href='nilaiHarapan2.html'">Contoh soal dan jawaban</button>
+            </li>
+            <li>
+                <label for="x">Masukan x(kecil) : </label>
+                <input type="number" name="x" id="x">
+            </li>
+            <li>
+                <label for="X">Masukan X(besar) : </label>
+                <input type="number" name="X" id="X">
+            </li>
+            <li>
+                <button onclick="tambah()" id="tmbl">Tambah input</button>
+            </li>
+            <li>
+                <button onclick="hasil()" id="hasilbtn">hasil</button>
+            </li>
+            <li>
+                <input type="text" name="hasil" id="hasil" readonly>
+            </li>
+        </ul>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+    </div>
+
+    <script src="javascript/nilaiHarapan.js"></script>
+</body>
+</html>

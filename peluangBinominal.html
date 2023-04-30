@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluang Binominal</title>
+    <link rel="stylesheet" href="css/view.css">
+</head>
+<body>
+    <div class="container">
+        <div class="close"><a href="index.html">X</a></div>
+        <h2>Peluang binominal adalah peluang yang di terapkan pada percobaan yang hanya memiliki dua hasil yang mungkin, seperti "sukses" atau "gagal"</h2>
+        <h2>Rumus : P(X= x) = nCx . P^x . q^n-x</h2>
+        <button onclick="window.location.href='peluangBinominal2.html'">Contoh Soal</button>
+        <ul>
+            <li>
+                <label for="nilaip">Tentukam nilai P : </label>
+                <input type="number" name="nilaip" id="nilaip">
+                <input type="number" name="nilaip2" id="nilaip2">
+                <button onclick="hasil()" id="hasil-btn">Hasil p</button>
+                <input type="text" id="hasil" readonly>
+                <p class="p1" id="p1"></p>
+            </li>
+            <li>
+                <label for="nilaiq">Tentukan nilai q : </label>
+                <input type="number" name="nilaiq" id="nilaiq">
+                <input type="number" name="nilaiq2" id="nilaiq2">
+                <button onclick="hasil2()" id="hasil2-btn">Hasil q</button>
+                <input type="text" id="hasil2" readonly>
+                <p class="p2" id="p2"></p>
+            </li>
+            <li>
+                <label for="nilain">Tentukan nilai n : </label>
+                <input type="number" name="nilain" id="nilain">
+            </li>
+            <li>
+                <label for="nilaix">Tentukan nilai x : </label>
+                <input type="number" name="nilaix" id="nilaix">
+            </li>
+            <li>
+                <button onclick="hasil3()" id="hasil3-btn">Hasil n dan x</button>
+                <button onclick="hapus3()" id="hapus3-btn">Hapus n dan x</button>
+            </li>  
+            <li>
+                <input type="text" id="hasil3" readonly>
+            </li>
+        </ul>
+        <p class="p3" id="p3"></p>
+        <p class="p4" id="p4"></p>
+        <p class="p5" id="p5"></p>
+    </div>
+    <script src="javascript/peluangBinominal.js"></script>
+</body>
+</html>

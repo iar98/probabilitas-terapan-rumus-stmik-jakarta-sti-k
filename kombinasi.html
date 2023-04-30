@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kombinasi</title>
+    <link rel="stylesheet" href="css/view.css">
+</head>
+<body>
+    <div class="container">
+        <div class="close"><a href="index.html">X</a></div>
+        <h2>Kombinasi adalah cara memilih beberapa objek dari himpunan objek yang ada tanpa memerhatikan urutannya <br>
+        Rumus kombinasi adalah : nCr = n!/(n-r)!*n!</h2>
+        <ul>
+            <li>
+                <label for="angka-pertama">Masukan n : </label>
+                <input type="number" name="angka-pertama" id="angka-pertama">
+            </li>
+            <li>
+                <label for="angka-kedua">Masukan r : </label>
+                <input type="number" name="angka-kedua" id="angka-kedua">
+            </li>
+            <li>
+                <br>
+                <button onclick="hitungKombinasi()">Hitung</button>
+            </li>
+            <li>
+                <br>
+                <label for="hasil">hasil : </label>
+                <input type="text" name="hasil" id="hasil" readonly>
+            </li>
+        </ul>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <p id="p6"></p>
+    </div>
+
+    <script>
+function hitungKombinasi() {
+  // Mendapatkan nilai n dan r dari input
+  const n = parseInt(document.getElementById('angka-pertama').value);
+  const r = parseInt(document.getElementById('angka-kedua').value);
+  
+  // Menghitung hasil kombinasi menggunakan rumus nCr
+  const nFaktorial = faktorial2(n);
+  const rFaktorial = faktorial2(r);
+  const nMinR = n - r;
+  const nMinRFaktorial = faktorial2(nMinR);
+  const nFaktorial2 = faktorial(n);
+  const rFaktorial2 = faktorial(r);
+  const nMinRFaktorial2 = faktorial(nMinR); 
+  const hasil = nFaktorial / (rFaktorial * nMinRFaktorial);
+  
+  // Menampilkan hasil pada input dengan id "hasil"
+  document.getElementById('hasil').value = hasil;
+  
+  // Menampilkan hasil pada paragraf
+  document.getElementById('p1').innerHTML = `Diketahui: n = ${n}, r = ${r}, ditanya: kombinasi ${r} dari ${n}?`;
+  document.getElementById('p2').innerHTML = `Faktorial contoh : 5! = 5  4 x 3 x 2 x 1`;
+  document.getElementById('p3').innerHTML = `nCr = n! / (r! * (n - r)!)`;
+  document.getElementById('p4').innerHTML = `= ${nFaktorial2} / (${rFaktorial2} * ${nMinRFaktorial2})`;
+  document.getElementById('p5').innerHTML = `= ${nFaktorial} / (${rFaktorial} * ${nMinRFaktorial})`;
+  document.getElementById('p6').innerHTML = `= ${hasil}`
+}
+
+function faktorial(n) {
+    let faktorial = 1;
+    let output = "";
+
+    for(let i = n; i >= 1; i--) {
+        faktorial *= i;
+        output += `${i} x `;
+    }
+    
+    output = output.slice(0, -3);
+    return output;
+}
+
+function faktorial2(n) {
+    let faktorial = 1;
+    
+    for(let i = n; i >= 1; i--) {
+        faktorial *= i;
+    }
+
+    return faktorial;
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutasi</title>
+    <link rel="stylesheet" href="css/view.css">
+</head>
+<body>
+    <div class="container">
+        <div class="close"><a href="index.html">X</a></div>
+        <h2>Permutasi adalah pengaturan sekelompok benda atau angka dengan memperhatikan urutannya <br>
+        Rumus permutasi adalah : nPr = n!/(n-r)!</h2>
+        <ul>
+            <li>
+                <label for="angka-pertama">Masukan n : </label>
+                <input type="number" name="angka-pertama" id="angka-pertama">
+            </li>
+            <li>
+                <label for="angka-kedua">Masukan r : </label>
+                <input type="number" name="angka-kedua" id="angka-kedua">
+            </li>
+            <li>
+                <br>
+                <button onclick="hitungPermutasi()">Hitung</button>
+            </li>
+            <li>
+                <br>
+                <label for="hasil">hasil : </label>
+                <input type="text" name="hasil" id="hasil" readonly>
+            </li>
+        </ul>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+    </div>
+
+<script>
+
+function hitungPermutasi() {
+    // Mendapatkan nilai n dan r dari input
+    let n = parseInt(document.getElementById('angka-pertama').value);
+    let r = parseInt(document.getElementById('angka-kedua').value);
+    
+    // Menghitung hasil permutasi menggunakan rumus nPr
+    // const hasil = faktorial(n) / faktorial(n - r);
+    let kurung = n - r;
+    let kurungFaktorial = faktorial(kurung);
+    let nFaktorial = faktorial(n);
+    let kurungFaktorial2 = faktorial2(kurung);
+    let nFaktorial2 = faktorial2(n);
+    let hasil = nFaktorial2 / kurungFaktorial2;
+    // Menampilkan hasil pada input dengan id "hasil"
+    document.getElementById('hasil').value = hasil;
+    // menampilkan pada paragraf
+    document.getElementById('p1').innerHTML = `di ketahui = n = ${n} bilangan <br>
+                                                            r = ${r} bilangan <br>
+                                               di tanya   = urutan bilangan ? 
+                                               jawaban : `
+    document.getElementById('p2').innerHTML = `Faktorial contoh: 5! = 5 x 4 x 3 x 2 x 1`
+    document.getElementById('p3').innerHTML = `nPr = n! / (n-r)! = ${n}! / (${n}-${r})!` 
+    document.getElementById('p4').innerHTML = `${nFaktorial} / ${kurungFaktorial}` 
+    document.getElementById('p5').innerHTML= `${nFaktorial2} / ${kurungFaktorial2} = ${hasil}`
+  }
+
+  function faktorial(n) {
+    let faktorial = 1;
+    let output = "";
+
+    for(let i = n; i >= 1; i--) {
+        faktorial *= i;
+        output += `${i} x `;
+    }
+    
+    output = output.slice(0, -3);
+    return output;
+}
+
+function faktorial2(n) {
+    let faktorial = 1;
+    
+    for(let i = n; i >= 1; i--) {
+        faktorial *= i;
+    }
+
+    return faktorial;
+}
+</script>
+</body>
+</html>

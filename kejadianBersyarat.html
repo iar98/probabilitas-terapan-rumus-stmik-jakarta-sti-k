@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kejadianbersyarat</title>
+    <link rel="stylesheet" href="css/view.css">
+</head>
+<body>
+    <div class="container">
+      <div class="close"><a href="index.html">X</a></div>
+        <h2>Probabilitas kejadian bersyarat adalah probabilitas suatu kejadian terjadi jika kita sudah mengetahui bahwa
+          kejadian <br>
+          lain juga terjadi . Rumus : P(A|B) = P(A dan B) / P(B)</h2>
+        <p>Aplikasi ini hanya akan membaca angka desimal bukan angka pecahan asli! jika anda mempunyai angka pecahan maka desimalkan terlebih dahulu tetapi hasilnya akan berbeda</p>
+        <button onclick="window.location.href = 'kejadianBersyarat2.html'">Contoh soal pecahan asli</button>
+        <button onclick="window.location.href = 'kejadianBersyarat3.html'">pecahan jika mengetahui kejadian lain terjadi</button>
+        <ul>
+          <li>
+            <label for="angka-pertama" id="probA">Probabilitas A dan B : </label>
+            <input type="number" name="angka-pertama" id="angka1">
+          </li>
+          <li>
+            <label for="angka-kedua" id="probB">Probabilitas A : </label>
+            <input type="number" name="angka-kedua" id="angka2">
+            <button onclick="tambah()" id="tambah">Tambah nilai</button>
+          </li>
+          <li>
+            <br>
+            <button onclick="hitung()" id="hitung">Hitung</button>
+          </li>
+          <li>
+            <br>
+            <label for="hasil">hasil : </label>
+            <input type="text" name="hasil" id="hasil" readonly>
+          </li>
+        </ul>
+    </div>
+
+    <script src="javascript/kejadianBersyarat.js"></script>
+</body>
+</html>
